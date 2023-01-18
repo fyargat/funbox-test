@@ -1,0 +1,25 @@
+@mixin font($font-family, $font-file, $font-weight) {
+  @font-face {
+    font-family: $font-family;
+    src: url($font-file + ".eot");
+    src: url($font-file + ".eot") format("embedded-opentype"),
+      url($font-file + ".woff") format("woff"),
+      url($font-file + ".woff2") format("woff2"),
+      url($font-file + ".ttf") format("truetype");
+    font-weight: $font-weight;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@include font(
+  "Trebuchet MS",
+  "../assets/fonts/TrebuchetMS/trebuchet-ms-regular",
+  400
+);
+@include font(
+  "Trebuchet MS",
+  "../assets/fonts/TrebuchetMS/trebuchet-ms-bold",
+  700
+);
+@include font("Exo2", "../assets/fonts/Exo2/exo2-thin", 100);
